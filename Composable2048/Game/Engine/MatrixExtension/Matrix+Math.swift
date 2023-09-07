@@ -14,8 +14,11 @@ extension Matrix {
 
   var canCombineValues: Bool {
     guard __hasZeros == false else { return true }
-    for row in 0..<count {
-      for column in 0..<count {
+    print(self.debugDescription)
+    print("Rows: \(self.rows)")
+    print("Columns: \(self.columns)")
+    for row in 0..<self.rows - 1 {
+      for column in 0..<self.columns - 1 {
         if canCombineItemAt(row: row, column: column) {
           return true
         }
@@ -63,10 +66,25 @@ extension Matrix {
   }
 
   private func __canCombineVertically(row: Int, column: Int) -> Bool {
-    row != count - 1 && self[row, column] == self[row+1,column]
+    print(self.debugDescription)
+    print("[\(row)] - [\(column)]")
+    print(self[row: row][column])
+
+    print("[\(row+1)] - [\(column)]")
+    print(self[row: row + 1][column])
+    return row != count - 1 && self[row: row][column] == self[row: row+1][column]
   }
 
   private func __canCombineHorizontally(row: Int, column: Int) -> Bool {
-    column != count - 1 && self[row, column] == self[row, column+1]
+    print(self.debugDescription)
+    print("-----------------------")
+
+    print("[\(row)] - [\(column)]")
+    print(self[row: row][column])
+
+    print("[\(row)] - [\(column+1)]")
+    print(self[row: row][column+1])
+
+    return column != count - 1 && self[row: row][column] == self[row: row][column + 1]
   }
 }

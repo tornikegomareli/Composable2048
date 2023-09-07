@@ -18,6 +18,8 @@
 		796523A02AAA7C3100B240B8 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7965239F2AAA7C3100B240B8 /* MatrixTests.swift */; };
 		796523A22AAA811500B240B8 /* MatrixExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796523A12AAA811500B240B8 /* MatrixExtensionTests.swift */; };
 		796523A42AAA84BF00B240B8 /* Matrix+CustomDebugStgringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796523A32AAA84BF00B240B8 /* Matrix+CustomDebugStgringConvertible.swift */; };
+		796523A82AAA864B00B240B8 /* FunctionalOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796523A72AAA864B00B240B8 /* FunctionalOperators.swift */; };
+		796523AB2AAA8BEB00B240B8 /* GameEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796523AA2AAA8BEB00B240B8 /* GameEngineTests.swift */; };
 		79B807762AA88C1100F5B0B8 /* Composable2048App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B807752AA88C1100F5B0B8 /* Composable2048App.swift */; };
 		79B807782AA88C1100F5B0B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B807772AA88C1100F5B0B8 /* ContentView.swift */; };
 		79B8077A2AA88C1400F5B0B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B807792AA88C1400F5B0B8 /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		7965239F2AAA7C3100B240B8 /* MatrixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixTests.swift; sourceTree = "<group>"; };
 		796523A12AAA811500B240B8 /* MatrixExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixExtensionTests.swift; sourceTree = "<group>"; };
 		796523A32AAA84BF00B240B8 /* Matrix+CustomDebugStgringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Matrix+CustomDebugStgringConvertible.swift"; sourceTree = "<group>"; };
+		796523A72AAA864B00B240B8 /* FunctionalOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalOperators.swift; sourceTree = "<group>"; };
+		796523AA2AAA8BEB00B240B8 /* GameEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineTests.swift; sourceTree = "<group>"; };
 		79B807722AA88C1100F5B0B8 /* Composable2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Composable2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79B807752AA88C1100F5B0B8 /* Composable2048App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composable2048App.swift; sourceTree = "<group>"; };
 		79B807772AA88C1100F5B0B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				7965239B2AAA7B2700B240B8 /* MatrixExtension */,
 				796523962AAA791A00B240B8 /* Matrix */,
 				796523992AAA79A100B240B8 /* GameEngine.swift */,
+				796523A72AAA864B00B240B8 /* FunctionalOperators.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -182,6 +187,14 @@
 				796523A12AAA811500B240B8 /* MatrixExtensionTests.swift */,
 			);
 			path = MatrixTests;
+			sourceTree = "<group>";
+		};
+		796523A92AAA8BDF00B240B8 /* EngineTests */ = {
+			isa = PBXGroup;
+			children = (
+				796523AA2AAA8BEB00B240B8 /* GameEngineTests.swift */,
+			);
+			path = EngineTests;
 			sourceTree = "<group>";
 		};
 		79B807692AA88C1100F5B0B8 = {
@@ -230,6 +243,7 @@
 		79B807852AA88C1400F5B0B8 /* Composable2048Tests */ = {
 			isa = PBXGroup;
 			children = (
+				796523A92AAA8BDF00B240B8 /* EngineTests */,
 				7965239E2AAA7BB400B240B8 /* MatrixTests */,
 				79B807862AA88C1400F5B0B8 /* Composable2048Tests.swift */,
 			);
@@ -402,6 +416,7 @@
 				79B807B42AA8B89400F5B0B8 /* View+RelativeSize.swift in Sources */,
 				796523862AAA6FB100B240B8 /* Tile.swift in Sources */,
 				7965238A2AAA703500B240B8 /* SwiftUIColor+GameColor.swift in Sources */,
+				796523A82AAA864B00B240B8 /* FunctionalOperators.swift in Sources */,
 				7965239A2AAA79A100B240B8 /* GameEngine.swift in Sources */,
 				796523A42AAA84BF00B240B8 /* Matrix+CustomDebugStgringConvertible.swift in Sources */,
 				796523982AAA792900B240B8 /* Matrix.swift in Sources */,
@@ -419,6 +434,7 @@
 				796523A22AAA811500B240B8 /* MatrixExtensionTests.swift in Sources */,
 				796523A02AAA7C3100B240B8 /* MatrixTests.swift in Sources */,
 				79B807872AA88C1400F5B0B8 /* Composable2048Tests.swift in Sources */,
+				796523AB2AAA8BEB00B240B8 /* GameEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
