@@ -574,6 +574,17 @@ public func += (lhs: inout Matrix, rhs: Matrix) {
   lhs = lhs + rhs
 }
 
+/* Checks if two Matrix are equal. */
+public func == (lhs: Matrix, rhs: Matrix) -> Bool {
+  // Step 1: Check if dimensions are equal
+  guard lhs.rows == rhs.rows && lhs.columns == rhs.columns else {
+    return false
+  }
+
+  // Step 2: Check if all elements are equal
+  return lhs.grid == rhs.grid
+}
+
 /* Adds a scalar to each element of the matrix. */
 public func + (lhs: Matrix, rhs: Double) -> Matrix {
   /*

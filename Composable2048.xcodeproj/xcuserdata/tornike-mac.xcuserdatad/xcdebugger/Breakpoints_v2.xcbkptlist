@@ -3,4 +3,54 @@
    uuid = "55E95CEB-1B07-45BF-9EC2-F8BB7EFF58D9"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A97B0E98-34B7-4D62-9EB3-43C994D134E1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048Tests/MatrixTests/MatrixExtensionTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "testCanCombineItemAt()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A97B0E98-34B7-4D62-9EB3-43C994D134E1 - 6ec323a58725560a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Composable2048Tests.MatrixExtensionTests.testCanCombineItemAt() -&gt; ()"
+                  moduleName = "Composable2048Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornike-mac/Development/Composable2048/Composable2048Tests/MatrixTests/MatrixExtensionTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "A97B0E98-34B7-4D62-9EB3-43C994D134E1 - 6ec323a58725560a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Composable2048Tests.MatrixExtensionTests.testCanCombineItemAt() -&gt; ()"
+                  moduleName = "Composable2048Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornike-mac/Development/Composable2048/Composable2048Tests/MatrixTests/MatrixExtensionTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
