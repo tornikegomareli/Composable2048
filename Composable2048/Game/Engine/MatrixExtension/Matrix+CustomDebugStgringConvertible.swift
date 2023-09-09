@@ -24,3 +24,5 @@ extension Matrix: CustomDebugStringConvertible {
     return description
   }
 }
+
+extension Matrix: Equatable {}

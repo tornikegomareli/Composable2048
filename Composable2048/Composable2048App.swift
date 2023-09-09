@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct Composable2048App: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
     }
+  }
 }

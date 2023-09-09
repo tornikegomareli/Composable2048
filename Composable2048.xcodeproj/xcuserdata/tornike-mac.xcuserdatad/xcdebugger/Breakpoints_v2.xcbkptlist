@@ -275,5 +275,164 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4DD570C-7A7C-4A69-B63C-80E8495EDDD9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048/Game/Engine/GameEngine.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "addNumber(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CDB7A982-E5DC-443A-8F04-624D3456BCC2"
+            shouldBeEnabled = "No"
+            condition = "row == 3"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048/Game/Engine/MatrixExtension/Matrix+Math.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "__indexesOf(_:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8D91AB2-4443-4B96-B556-F920A2EDB573"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048/Game/Engine/MatrixExtension/Matrix+Math.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "__indexesOf(_:with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D8D91AB2-4443-4B96-B556-F920A2EDB573 - 45f33a3344c8e0d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Composable2048.Matrix.__indexesOf(_: Swift.Int, with: Swift.Int) -&gt; Swift.Array&lt;(Swift.Int, Swift.Int)&gt;"
+                  moduleName = "Composable2048"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornike-mac/Development/Composable2048/Composable2048/Game/Engine/MatrixExtension/Matrix+Math.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "D8D91AB2-4443-4B96-B556-F920A2EDB573 - 45f33a3344c8e0d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Composable2048.Matrix.__indexesOf(_: Swift.Int, with: Swift.Int) -&gt; Swift.Array&lt;(Swift.Int, Swift.Int)&gt;"
+                  moduleName = "Composable2048"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornike-mac/Development/Composable2048/Composable2048/Game/Engine/MatrixExtension/Matrix+Math.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "612">
+               </Location>
+               <Location
+                  uuid = "D8D91AB2-4443-4B96-B556-F920A2EDB573 - 45f33a3344c8e0d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Composable2048.Matrix.__indexesOf(_: Swift.Int, with: Swift.Int) -&gt; Swift.Array&lt;(Swift.Int, Swift.Int)&gt;"
+                  moduleName = "Composable2048"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornike-mac/Development/Composable2048/Composable2048/Game/Engine/MatrixExtension/Matrix+Math.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "D8D91AB2-4443-4B96-B556-F920A2EDB573 - 45f33a3344c8e0d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Composable2048.Matrix.__indexesOf(_: Swift.Int, with: Swift.Int) -&gt; Swift.Array&lt;(Swift.Int, Swift.Int)&gt;"
+                  moduleName = "Composable2048"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornike-mac/Development/Composable2048/Composable2048/Game/Engine/MatrixExtension/Matrix+Math.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "596">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66709662-C736-4C96-BF4C-865B35E1B65D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048/Game/Engine/GameEngine.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "addNumber(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB9562FE-6D65-42EE-9EBB-175B7F007232"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048/Game/Engine/MatrixExtension/Matrix+Math.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "randomIndex(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1384ABFC-F3AF-467B-A51B-9D2B46A387A7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048/Game/Engine/MatrixExtension/Matrix+Math.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "__indexesOf(_:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

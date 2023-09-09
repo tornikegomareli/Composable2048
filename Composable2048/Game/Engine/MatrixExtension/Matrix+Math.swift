@@ -44,7 +44,7 @@ extension Matrix {
   private func __indexesWith(_ value: Int) -> [(Int, Int)] {
     var indexes: [(Int, Int)] = []
 
-    for row in 0..<count {
+    for row in 0..<rows - 1 {
       indexes.append(contentsOf: __indexesOf(row, with: value))
     }
 
@@ -53,8 +53,8 @@ extension Matrix {
 
   private func __indexesOf(_ row: Int, with value: Int)  -> [(Int, Int)] {
     var indexes: [(Int, Int)] = []
-    for column in 0..<count {
-      if self[row, column] == Double(value) {
+    for column in 0..<columns - 1 {
+      if self[row: row][column] == Double(value) {
         indexes.append((row,column))
       }
     }

@@ -33,7 +33,7 @@ class GameEngine {
     if let emptyTile = emptyTile {
       newBoard[emptyTile.row, emptyTile.column] = Double(randomElement)
     }
-
+ 
     return (newBoard, emptyTile)
   }
 

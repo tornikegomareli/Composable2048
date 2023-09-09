@@ -48,12 +48,38 @@ class GameEngineTests: XCTestCase {
   }
 
   /// This tests need to fix and debug, there is some kind of problem in Game Engine
-//  func testAddNumber() {
-//    let initialBoard = board
-//    let (newBoard, addedTile) = engine.addNumber(board)
-//    //XCTAssertNotEqual(initialBoard, newBoard)
-//    XCTAssertNotNil(addedTile)
-//  }
+  func testAddNumber() {
+    let initialBoard = [
+      [2.0, 4.0, 2.0, 4.0],
+      [4.0, 0, 4.0, 0],
+      [2.0, 4.0, 2.0, 4.0],
+      [4.0, 2.0, 4.0, 0]
+    ]
+
+    board = Matrix.init(initialBoard)
+    let (newBoard, addedTile) = engine.addNumber(board)
+    print("OLD BOARD")
+    print(board.debugDescription)
+    print("_______________-")
+    print(newBoard.debugDescription)
+    XCTAssertNotEqual(board, newBoard)
+    XCTAssertNotNil(addedTile)
+  }
+
+  func testWhenTryingAddNumberOnFullBoard() {
+    let initialBoard = [
+      [2.0, 4.0, 2.0, 4.0],
+      [4.0, 2.0, 4.0, 2.0],
+      [2.0, 4.0, 2.0, 4.0],
+      [4.0, 2.0, 4.0, 2.0]
+    ]
+
+    board = Matrix.init(initialBoard)
+    let (newBoard, addedTile) = engine.addNumber(board)
+
+    print(newBoard.debugDescription)
+    XCTAssertNil(addedTile, "Added tile need to be nil, cause board is full")
+  }
 //
 //  func testSlide() {
 //    let row = [2, 0, 2, 4]

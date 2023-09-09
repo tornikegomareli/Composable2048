@@ -10,6 +10,7 @@ import SwiftUI
 struct Tile: View {
   let value: Int
   let wasAdded: Bool
+
   private let style: TileStyle
   private let title: String
   private let size: CGFloat = 70
@@ -17,6 +18,7 @@ struct Tile: View {
   init(_ value: Int, wasAdded: Bool = false) {
     self.wasAdded = wasAdded
     self.value = value
+
     style = TileStyle(value)
     title = value == 0 ? "" : value.description
   }
