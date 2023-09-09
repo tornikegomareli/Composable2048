@@ -434,5 +434,85 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D11D9D86-11E0-46DF-B425-572F10CFC547"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048Tests/EngineTests/GameEngineTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "testSlide()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0422CF8D-26B7-413D-8F5A-FA15A0092C1C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048Tests/EngineTests/GameEngineTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "testFlip()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0422CF8D-26B7-413D-8F5A-FA15A0092C1C - 5c8010dbee095d5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Composable2048Tests.GameEngineTests.testFlip() -&gt; ()"
+                  moduleName = "Composable2048Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornike-mac/Development/Composable2048/Composable2048Tests/EngineTests/GameEngineTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "1060">
+               </Location>
+               <Location
+                  uuid = "0422CF8D-26B7-413D-8F5A-FA15A0092C1C - 5c8010dbee095d3c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Composable2048Tests.GameEngineTests.testFlip() -&gt; ()"
+                  moduleName = "Composable2048Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornike-mac/Development/Composable2048/Composable2048Tests/EngineTests/GameEngineTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "1008">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C213E67E-6A98-4234-A740-B8742666D690"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048Tests/EngineTests/GameEngineTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "testRotateCounterClockWise()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

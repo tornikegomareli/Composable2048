@@ -37,10 +37,31 @@ class GameEngine {
     return (newBoard, emptyTile)
   }
 
+  /// Slides the non-zero elements in a row to the right, filling the gaps with zeros.
+  /// - Parameter row: An array of integers representing a row in the game board.
+  /// - Returns: A new array where all non-zero elements are moved to the right, and zeros fill the remaining positions.
+  /*
+   Example:
+    Initial row: [2, 0, 4, 0]
+    tilesWithNumbers: [2, 4]
+    emptyTiles: 2
+    arrayOfZeros: [0, 0]
+
+   Returned row: [0, 0, 2, 4]
+   */
   func slide(_ row: [Int]) -> [Int] {
+    /// Filter out the zeros from the row and keep the non-zero elements.
+    /// This step retains the relative order of the non-zero elements.
     let tilesWithNumbers = row.filter { $0 > .zero }
+
+    /// Calculate the number of zeros in the original row.
     let emptyTiles = row.count - tilesWithNumbers.count
+
+    /// Create an array with zeros, the count of which equals the number of zeros in the original row.
     let arrayOfZeros = Array(repeating: Int.zero, count: emptyTiles)
+
+    /// Concatenate the array of zeros at the beginning and the non-zero elements at the end.
+    /// This effectively slides the non-zero elements to the right.
     return arrayOfZeros + tilesWithNumbers
   }
 
@@ -70,13 +91,17 @@ class GameEngine {
   }
 
   func rotate(_ board: Matrix) -> Matrix {
-      var newBoard = emptyBoard
-      for row in 0..<board.count {
-        for column in 0..<board.rows {
-              newBoard[row, column] = board[column, row]
-          }
+    var newBoard = emptyBoard
+    // Iterate through all rows and columns of the original board.
+    for row in 0..<board.rows {
+      for column in 0..<board.columns {
+        // Rotate the board 90 degrees counterclockwise by swapping row and column indices.
+        newBoard[row, column] = board[column, board.rows - row - 1]
       }
-      return newBoard
+    }
+
+    // Return the rotated board.
+    return newBoard
   }
 
   private func operateRows(_ board: Matrix) -> Matrix {

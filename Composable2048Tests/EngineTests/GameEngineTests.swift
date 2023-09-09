@@ -80,33 +80,62 @@ class GameEngineTests: XCTestCase {
     print(newBoard.debugDescription)
     XCTAssertNil(addedTile, "Added tile need to be nil, cause board is full")
   }
-//
-//  func testSlide() {
-//    let row = [2, 0, 2, 4]
-//    let result = engine.slide(row)
-//    XCTAssertEqual(result, [0, 0, 2, 4])
-//  }
-//
-//  func testCombine() {
-//    let row = [2, 2, 4, 4]
-//    let result = engine.combine(row)
-//    XCTAssertEqual(result, [0, 4, 0, 8])
-//  }
-//
-//  func testFlip() {
-//    let initialBoard = Matrix([[1, 2], [3, 4]])
-//    let flippedBoard = engine.flip(initialBoard)
-//    let expectedBoard = Matrix([[2, 1], [4, 3]])
-//    //XCTAssertEqual(flippedBoard, expectedBoard)
-//  }
-//
-//  func testRotate() {
-//    let initialBoard = Matrix([[1, 2], [3, 4]])
-//    let rotatedBoard = engine.rotate(initialBoard)
-//    let expectedBoard = Matrix([[1, 3], [2, 4]])
-//    //XCTAssertEqual(rotatedBoard, expectedBoard)
-//  }
-//
+
+  func testSlide() {
+    let row = [2, 0, 4, 0]
+    let result = engine.slide(row)
+    XCTAssertEqual(result, [0, 0, 2, 4])
+  }
+
+  func testCombine() {
+    let row = [2, 2, 4, 4]
+    let result = engine.combine(row)
+    XCTAssertEqual(result, [0, 4, 0, 8])
+  }
+
+  func testFlip() {
+    let initialBoard = Matrix(
+      [
+        [1, 2, 3, 4],
+        [4, 5, 6, 7],
+        [8, 9, 10, 11],
+        [15, 15, 15, 15]
+      ]
+    )
+
+    let flippedBoard = engine.flip(initialBoard)
+    print(flippedBoard.debugDescription)
+    let expectedBoard = Matrix([
+      [4.0, 3.0, 2.0, 1.0],
+      [7.0, 6.0, 5.0, 4.0],
+      [11.0, 10.0, 9.0, 8.0],
+      [15.0, 15.0, 15.0, 15.0]
+    ])
+
+    XCTAssertEqual(flippedBoard, expectedBoard)
+  }
+
+  func testRotateCounterClockWise() {
+    let initialBoard = Matrix([
+        [512.0, 16.0, 0.0, 64.0],
+        [2048.0, 512.0, 2.0, 64.0],
+        [1024.0, 32.0, 128.0, 32.0],
+        [64.0, 2.0, 2048.0, 16.0]
+    ])
+
+    let rotatedBoard = engine.rotate(initialBoard)
+    
+    print(rotatedBoard.debugDescription)
+
+    let expectedBoard = Matrix([
+      [64.0, 64.0, 32.0, 16.0],
+      [0.0, 2.0, 128.0, 2048.0],
+      [16.0, 512.0, 32.0, 2.0],
+      [512.0, 2048.0, 1024.0, 64.0]
+    ])
+    XCTAssertEqual(rotatedBoard, expectedBoard)
+  }
+  //
 //  func testPush() {
 //    let initialBoard = Matrix([[2, 2, 0, 4], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
 //    let (newBoard, scoredPoints) = engine.push(initialBoard, to: .right)
