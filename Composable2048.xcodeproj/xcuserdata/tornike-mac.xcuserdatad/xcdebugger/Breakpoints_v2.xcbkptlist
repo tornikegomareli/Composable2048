@@ -285,8 +285,8 @@
             filePath = "Composable2048/Game/Engine/GameEngine.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "addNumber(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -396,8 +396,8 @@
             filePath = "Composable2048/Game/Engine/GameEngine.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "addNumber(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -512,6 +512,85 @@
             endingLineNumber = "130"
             landmarkName = "testRotateCounterClockWise()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F646DA94-6F2D-4232-8653-5C5F2AD90750"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048Tests/EngineTests/GameEngineTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "testPushRight()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "244894AE-C196-4F78-A7C0-24582CB2CB4A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Composable2048/Game/Engine/GameEngine.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "rotate(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "244894AE-C196-4F78-A7C0-24582CB2CB4A - 81b3c3b52fb22113"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Composable2048.GameEngine.rotate(Composable2048.Matrix) -&gt; Composable2048.Matrix"
+                  moduleName = "Composable2048"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornike-mac/Development/Composable2048/Composable2048/Game/Engine/GameEngine.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "1076">
+               </Location>
+               <Location
+                  uuid = "244894AE-C196-4F78-A7C0-24582CB2CB4A - 81b3c3b52fb22113"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Composable2048.GameEngine.rotate(Composable2048.Matrix) -&gt; Composable2048.Matrix"
+                  moduleName = "Composable2048"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornike-mac/Development/Composable2048/Composable2048/Game/Engine/GameEngine.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "1032">
+               </Location>
+               <Location
+                  uuid = "244894AE-C196-4F78-A7C0-24582CB2CB4A - 81b3c3b52fb22113"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Composable2048.GameEngine.rotate(Composable2048.Matrix) -&gt; Composable2048.Matrix"
+                  moduleName = "Composable2048"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tornike-mac/Development/Composable2048/Composable2048/Game/Engine/GameEngine.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "1036">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

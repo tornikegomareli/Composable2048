@@ -7,8 +7,11 @@
 
 import Foundation
 
+/// `GameEngine` encapsulates the core logic of the 2048 game.
 class GameEngine {
+  /// Represents the empty game board initialized with zeros.
   private var emptyBoard = Matrix.zeros(rows: 4, columns: 4)
+  /// Holds the total points scored in the game.
   private var points: Int = 0
 
   /// Generates a random element based on a predefined distribution.
@@ -22,10 +25,15 @@ class GameEngine {
     return Int.random(in: 0...upperBound) < threshold ? commonElement : rareElement
   }
 
+  /// Generates a random tile value based on a predefined distribution.
+  /// - Returns: Returns `2` with 90% probability and `4` with 10% probability.
   func isGameOver(_ board: Matrix) -> Bool {
     return !board.canCombineValues
   }
 
+  /// Adds a random number to a random empty tile on the board.
+  /// - Parameter board: The current game board.
+  /// - Returns: A tuple containing the new board and the coordinates of the added tile.
   func addNumber(_ board: Matrix) -> (newBoard: Matrix, addedTile: (Int,Int)?) {
     let emptyTile = board.randomIndex(for: .zero)
     var newBoard = board
@@ -65,6 +73,9 @@ class GameEngine {
     return arrayOfZeros + tilesWithNumbers
   }
 
+  /// Combines adjacent tiles with the same value in a row.
+  /// - Parameter row: A row from the game board.
+  /// - Returns: A new row array after performing the combine operation.
   func combine(_ row: [Int]) -> [Int] {
     var newRow = row
     for column in (1...row.count - 1).reversed() {
@@ -80,6 +91,9 @@ class GameEngine {
     return newRow
   }
 
+  /// Flips the board horizontally.
+  /// - Parameter board: The current game board.
+  /// - Returns: A new board that is the horizontal flip of the input board.
   func flip(_ board: Matrix) -> Matrix {
     var flipped = emptyBoard
     for row in 0..<board.rows {
@@ -90,13 +104,16 @@ class GameEngine {
     return flipped
   }
 
+  /// Rotates the board 90 degrees counterclockwise.
+  /// - Parameter board: The current game board.
+  /// - Returns: A new board that is rotated 90 degrees counterclockwise.
   func rotate(_ board: Matrix) -> Matrix {
     var newBoard = emptyBoard
     // Iterate through all rows and columns of the original board.
     for row in 0..<board.rows {
-      for column in 0..<board.columns {
+      for column in 0..<board[row: row].count {
         // Rotate the board 90 degrees counterclockwise by swapping row and column indices.
-        newBoard[row, column] = board[column, board.rows - row - 1]
+        newBoard[row: row][column] = board[row: column][row]
       }
     }
 
@@ -104,6 +121,9 @@ class GameEngine {
     return newBoard
   }
 
+  /// Private helper function to slide and combine rows of the board.
+  /// - Parameter board: The current game board.
+  /// - Returns: A new board after sliding and combining rows.
   private func operateRows(_ board: Matrix) -> Matrix {
     let data = board.array.map { grid in
       let intGrid = grid.map { Int($0) }
@@ -113,6 +133,11 @@ class GameEngine {
     return Matrix(data)
   }
 
+  /// Moves the board in a specific direction.
+  /// - Parameters:
+  ///   - board: The current game board.
+  ///   - direction: The direction to move the board.
+  /// - Returns: A tuple containing the new board and the points scored during this move.
   func push(_ board: Matrix, to direction: Direction) -> (newBoard: Matrix, scoredPoints: Int) {
       var newBoard = board
       points = .zero
@@ -127,39 +152,55 @@ class GameEngine {
       return (newBoard, points)
   }
 
+  /// Combines and slides the tiles in a row using the game's logic.
+  /// This function is a composite of the slide and combine functions, effectively performing both operations.
+  /// - Parameter row: A row from the game board represented as an array of integers.
+  /// - Returns: A new row array after performing the slide and combine operations.
   private func slideAndCombine(_ row: [Int]) -> [Int] {
-      row
-          |> slide
-          |> combine
-          |> slide
+    row
+    |> slide  // First, slide the non-zero elements to the right.
+    |> combine  // Combine any adjacent, identical elements.
+    |> slide  // Finally, slide again to fill any gaps created by the combine operation.
   }
 
+  /// Moves the board upwards, combining any adjacent, identical tiles.
+  /// - Parameter board: The current game board.
+  /// - Returns: A new board after the 'up' movement operation.
   private func pushUp(_ board: Matrix) -> Matrix {
-      board
-          |> rotate
-          |> flip
-          |> operateRows
-          |> flip
-          |> rotate
+    board
+      |> rotate  // Rotate the board 90 degrees counterclockwise.
+      |> flip  // Flip the board horizontally.
+      |> operateRows  // Slide and combine each row.
+      |> flip  // Flip the board back to its original orientation.
+      |> rotate  // Rotate the board back to its original orientation.
   }
 
+  /// Moves the board downwards, combining any adjacent, identical tiles.
+  /// - Parameter board: The current game board.
+  /// - Returns: A new board after the 'down' movement operation.
   private func pushDown(_ board: Matrix) -> Matrix {
-      board
-          |> rotate
-          |> operateRows
-          |> rotate
+    board
+      |> rotate  // Rotate the board 90 degrees counterclockwise.
+      |> operateRows  // Slide and combine each row.
+      |> rotate  // Rotate the board back to its original orientation.
   }
 
+  /// Moves the board to the left, combining any adjacent, identical tiles.
+  /// - Parameter board: The current game board.
+  /// - Returns: A new board after the 'left' movement operation.
   private func pushLeft(_ board: Matrix) -> Matrix {
-      board
-          |> flip
-          |> operateRows
-          |> flip
+    board
+      |> flip  // Flip the board horizontally.
+      |> operateRows  // Slide and combine each row.
+      |> flip  // Flip the board back to its original orientation.
   }
 
+  /// Moves the board to the right, combining any adjacent, identical tiles.
+  /// - Parameter board: The current game board.
+  /// - Returns: A new board after the 'right' movement operation.
   private func pushRight(_ board: Matrix) -> Matrix {
-      board
-          |> operateRows
+    board
+      |> operateRows  // Slide and combine each row.
   }
 }
 

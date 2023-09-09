@@ -124,7 +124,7 @@ class GameEngineTests: XCTestCase {
     ])
 
     let rotatedBoard = engine.rotate(initialBoard)
-    
+
     print(rotatedBoard.debugDescription)
 
     let expectedBoard = Matrix([
@@ -135,12 +135,129 @@ class GameEngineTests: XCTestCase {
     ])
     XCTAssertEqual(rotatedBoard, expectedBoard)
   }
-  //
-//  func testPush() {
-//    let initialBoard = Matrix([[2, 2, 0, 4], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
-//    let (newBoard, scoredPoints) = engine.push(initialBoard, to: .right)
-//    let expectedBoard = Matrix([[0, 0, 4, 4], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
-//    //XCTAssertEqual(newBoard, expectedBoard)
-//    //XCTAssertEqual(scoredPoints, 8)
-//  }
+
+  func testPush() {
+    let initialBoard = Matrix(
+      [
+        [2, 2, 0, 4],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
+      ]
+    )
+    let (newBoard, scoredPoints) = engine.push(initialBoard, to: .right)
+    let expectedBoard = Matrix(
+      [
+        [0, 0, 4, 4],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
+      ]
+    )
+    XCTAssertEqual(newBoard, expectedBoard)
+    XCTAssertEqual(scoredPoints, 4)
+
+    print(newBoard.debugDescription)
+    let (updatedBoard, newScoredPoints) = engine.push(newBoard, to: .right)
+    print(updatedBoard.debugDescription)
+    let newExpectedBoard = Matrix(
+      [
+        [0, 0, 0, 8],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
+      ]
+    )
+
+    XCTAssertEqual(updatedBoard, newExpectedBoard)
+    XCTAssertEqual(newScoredPoints, 8)
+  }
+
+  // Test pushing to the right
+  func testPushRight() {
+    let initialBoard = Matrix([
+      [2.0, 0.0, 2.0, 4.0],
+      [4.0, 4.0, 4.0, 0.0],
+      [2.0, 0.0, 0.0, 0.0],
+      [0.0, 0.0, 0.0, 0.0]
+    ])
+
+    let (newBoard, scoredPoints) = engine.push(initialBoard, to: .right)
+    print(newBoard.debugDescription)
+    // Your assertions here
+    // For example:
+    XCTAssertEqual(
+      newBoard[row: 0],
+      [0.0, 0.0, 4.0, 4.0]
+    )
+    XCTAssertEqual(
+      newBoard[row: 1],
+      [0.0, 0.0, 4.0, 8.0]
+    )
+
+    XCTAssertEqual(
+      newBoard[row: 2],
+      [0.0, 0.0, 0.0, 2.0]
+    )
+
+    XCTAssertEqual(scoredPoints, 12)
+  }
+
+  // Test pushing up
+  func testPushUp() {
+    let initialBoard = Matrix([
+      [2.0, 0.0, 2.0, 0.0],
+      [0.0, 4.0, 0.0, 0.0],
+      [0.0, 4.0, 4.0, 8.0],
+      [0.0, 0.0, 0.0, 8.0]
+    ])
+
+    let (newBoard, scoredPoints) = engine.push(initialBoard, to: .up)
+
+    let expectedBoard = Matrix([
+      [2.0, 8.0, 2.0, 16.0],
+      [0.0, 0.0, 4.0, 0.0],
+      [0.0, 0.0, 0.0, 0.0],
+      [0.0, 0.0, 0.0, 0.0]
+    ])
+
+    XCTAssertEqual(expectedBoard, newBoard)
+    XCTAssertEqual(scoredPoints, 24)
+  }
+
+  // Test pushing left
+  func testPushLeft() {
+    let initialBoard = Matrix([
+      [2.0, 0.0, 2.0, 4.0],
+      [4.0, 4.0, 4.0, 0.0],
+      [2.0, 0.0, 0.0, 0.0],
+      [0.0, 0.0, 0.0, 0.0]
+    ])
+
+    let (newBoard, scoredPoints) = engine.push(initialBoard, to: .left)
+    XCTAssertEqual(newBoard[row: 0], [4.0, 4.0, 0.0, 0.0])
+    XCTAssertEqual(newBoard[row: 1], [8.0, 4.0, 0.0, 0.0])
+    XCTAssertEqual(newBoard[row: 2], [2.0, 0.0, 0.0, 0.0])
+    XCTAssertEqual(scoredPoints, 12)
+  }
+
+  // Test pushing down
+  func testPushDown() {
+    let initialBoard = Matrix([
+      [2.0, 0.0, 2.0, 4.0],
+      [4.0, 4.0, 0.0, 0.0],
+      [2.0, 0.0, 0.0, 0.0],
+      [0.0, 0.0, 0.0, 0.0]
+    ])
+
+    let (newBoard, scoredPoints) = engine.push(initialBoard, to: .down)
+
+    print(newBoard.debugDescription)
+    XCTAssertEqual(newBoard[row: 0], [0.0, 0.0, 0.0, 0.0])
+    XCTAssertEqual(newBoard[row: 1], [2.0, 0.0, 0.0, 0.0])
+    XCTAssertEqual(newBoard[row: 2], [4.0, 0.0, 0.0, 0.0])
+    XCTAssertEqual(newBoard[row: 3], [2.0, 4.0, 2.0, 4.0])
+
+    XCTAssertEqual(scoredPoints, 0)
+  }
 }
