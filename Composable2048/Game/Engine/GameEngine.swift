@@ -152,6 +152,18 @@ class GameEngine {
       return (newBoard, points)
   }
 
+  func mockBoard() -> Matrix {
+    // Initialize an empty 4x4 board
+    var board = Matrix([
+      [2.0, 4.0, 8.0, 16.0],
+      [0.0, 0.0, 0.0, 256.0],
+      [0.0, 0.0, 32.0, 0.0],
+      [1024.0, 0.0, 0.0, 64.0]
+    ])
+
+    return board
+  }
+
   /// Combines and slides the tiles in a row using the game's logic.
   /// This function is a composite of the slide and combine functions, effectively performing both operations.
   /// - Parameter row: A row from the game board represented as an array of integers.
@@ -213,4 +225,3 @@ extension GameEngine {
     case down
   }
 }
-

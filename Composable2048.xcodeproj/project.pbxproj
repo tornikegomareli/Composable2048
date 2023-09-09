@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7932806C2AAD1CBC0045034B /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932806B2AAD1CBC0045034B /* ActionButton.swift */; };
+		7932806E2AAD1CCF0045034B /* GoalText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932806D2AAD1CCF0045034B /* GoalText.swift */; };
+		793280702AAD1CFA0045034B /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7932806F2AAD1CFA0045034B /* Header.swift */; };
+		793280722AAD1D050045034B /* HeaderBarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793280712AAD1D050045034B /* HeaderBarTitle.swift */; };
+		793280742AAD1D1B0045034B /* Moves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793280732AAD1D1B0045034B /* Moves.swift */; };
+		793280762AAD1D3D0045034B /* ScoreBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793280752AAD1D3D0045034B /* ScoreBox.swift */; };
+		793280782AAD1D740045034B /* SmallActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793280772AAD1D740045034B /* SmallActionButton.swift */; };
+		7932807A2AAD1D990045034B /* YellowBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793280792AAD1D990045034B /* YellowBlock.swift */; };
 		796523822AAA6F9900B240B8 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796523812AAA6F9900B240B8 /* Board.swift */; };
 		796523862AAA6FB100B240B8 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796523852AAA6FB100B240B8 /* Tile.swift */; };
 		796523882AAA6FBE00B240B8 /* TileStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796523872AAA6FBE00B240B8 /* TileStyle.swift */; };
@@ -49,6 +57,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7932806B2AAD1CBC0045034B /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		7932806D2AAD1CCF0045034B /* GoalText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalText.swift; sourceTree = "<group>"; };
+		7932806F2AAD1CFA0045034B /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		793280712AAD1D050045034B /* HeaderBarTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBarTitle.swift; sourceTree = "<group>"; };
+		793280732AAD1D1B0045034B /* Moves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moves.swift; sourceTree = "<group>"; };
+		793280752AAD1D3D0045034B /* ScoreBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBox.swift; sourceTree = "<group>"; };
+		793280772AAD1D740045034B /* SmallActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallActionButton.swift; sourceTree = "<group>"; };
+		793280792AAD1D990045034B /* YellowBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowBlock.swift; sourceTree = "<group>"; };
 		796523812AAA6F9900B240B8 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		796523852AAA6FB100B240B8 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		796523872AAA6FBE00B240B8 /* TileStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileStyle.swift; sourceTree = "<group>"; };
@@ -101,6 +117,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7932806A2AAD1CA70045034B /* ChildViews */ = {
+			isa = PBXGroup;
+			children = (
+				7932806B2AAD1CBC0045034B /* ActionButton.swift */,
+				7932806D2AAD1CCF0045034B /* GoalText.swift */,
+				7932806F2AAD1CFA0045034B /* Header.swift */,
+				793280712AAD1D050045034B /* HeaderBarTitle.swift */,
+				793280732AAD1D1B0045034B /* Moves.swift */,
+				793280752AAD1D3D0045034B /* ScoreBox.swift */,
+				793280772AAD1D740045034B /* SmallActionButton.swift */,
+				793280792AAD1D990045034B /* YellowBlock.swift */,
+			);
+			path = ChildViews;
+			sourceTree = "<group>";
+		};
 		7965237D2AAA6E7100B240B8 /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +144,7 @@
 		7965237E2AAA6E9700B240B8 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7932806A2AAD1CA70045034B /* ChildViews */,
 				796523802AAA6F8900B240B8 /* GameBoard */,
 			);
 			path = Presentation;
@@ -411,11 +443,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793280702AAD1CFA0045034B /* Header.swift in Sources */,
+				793280782AAD1D740045034B /* SmallActionButton.swift in Sources */,
 				7965238C2AAA708D00B240B8 /* RelativeSizeLayout.swift in Sources */,
 				79B807782AA88C1100F5B0B8 /* ContentView.swift in Sources */,
 				79B807B42AA8B89400F5B0B8 /* View+RelativeSize.swift in Sources */,
 				796523862AAA6FB100B240B8 /* Tile.swift in Sources */,
 				7965238A2AAA703500B240B8 /* SwiftUIColor+GameColor.swift in Sources */,
+				7932807A2AAD1D990045034B /* YellowBlock.swift in Sources */,
+				793280762AAD1D3D0045034B /* ScoreBox.swift in Sources */,
 				796523A82AAA864B00B240B8 /* FunctionalOperators.swift in Sources */,
 				7965239A2AAA79A100B240B8 /* GameEngine.swift in Sources */,
 				796523A42AAA84BF00B240B8 /* Matrix+CustomDebugStgringConvertible.swift in Sources */,
@@ -424,6 +460,10 @@
 				79B807762AA88C1100F5B0B8 /* Composable2048App.swift in Sources */,
 				796523882AAA6FBE00B240B8 /* TileStyle.swift in Sources */,
 				7965239D2AAA7B3900B240B8 /* Matrix+Math.swift in Sources */,
+				793280742AAD1D1B0045034B /* Moves.swift in Sources */,
+				793280722AAD1D050045034B /* HeaderBarTitle.swift in Sources */,
+				7932806C2AAD1CBC0045034B /* ActionButton.swift in Sources */,
+				7932806E2AAD1CCF0045034B /* GoalText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
