@@ -20,7 +20,10 @@ struct Board: View {
     VStack {
       ForEach(0..<self.board.grid.count / 4, id: \.self) { row in
         HStack {
-          ForEach(0..<self.board[row: row].count, id: \.self) { column in
+          ForEach(
+            0..<self.board[row: row].count,
+            id: \.self
+          ) { column in
             Tile(Int(self.board[row: row][column]), wasAdded: self.wasAdded(row: row, column: column))
           }
         }

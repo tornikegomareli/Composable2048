@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct Composable2048App: App {
   var body: some Scene {
-    WindowGroup {
-      ContentView()
+    MainActor.assumeIsolated {
+      WindowGroup {
+        MainGameView(
+          store: Store(
+            initialState: MainGameFeature.State(),
+            reducer: {
+              MainGameFeature()
+                ._printChanges()
+            }
+          )
+        )
+      }
     }
   }
 }
