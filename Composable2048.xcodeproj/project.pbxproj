@@ -163,6 +163,13 @@
 			path = GestureSwipeDirection;
 			sourceTree = "<group>";
 		};
+		793280842AAD31CF0045034B /* PersistanceStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PersistanceStorage;
+			sourceTree = "<group>";
+		};
 		7965237D2AAA6E7100B240B8 /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +290,7 @@
 		79B807742AA88C1100F5B0B8 /* Composable2048 */ = {
 			isa = PBXGroup;
 			children = (
+				793280842AAD31CF0045034B /* PersistanceStorage */,
 				7932807E2AAD240C0045034B /* Dependencies */,
 				7965237D2AAA6E7100B240B8 /* Game */,
 				7965237E2AAA6E9700B240B8 /* Presentation */,

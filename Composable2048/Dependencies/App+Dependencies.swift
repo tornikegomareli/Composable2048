@@ -7,6 +7,7 @@
 
 import Foundation
 import Dependencies
+import SwiftUI
 
 extension DependencyValues {
   var gameEngine: GameEngine {

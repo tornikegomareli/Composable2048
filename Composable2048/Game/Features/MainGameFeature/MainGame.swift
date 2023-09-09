@@ -24,6 +24,7 @@ struct MainGameFeature: Reducer {
     case start
     case userSwipedWith(direction: GameEngine.Direction)
     case addTale
+    case updateBestScore(score: Int)
   }
 
   var body: some ReducerOf<Self> {
@@ -44,9 +45,15 @@ struct MainGameFeature: Reducer {
         let (updatedBoard, updatedScore) = engine.push(state.board, to: direction)
         state.board = updatedBoard
         state.score += updatedScore
+        let latestGameScore = state.score
         return .run { send in
           await send(.addTale)
+          await send(.updateBestScore(score: latestGameScore))
         }
+      case .updateBestScore(let score):
+//        let gameState = GameState(bestScore: max(state.gameState.first?.bestScore ?? 0, score))
+//        state.modelContext.insert(gameState)
+        return .none
       }
     }
   }
