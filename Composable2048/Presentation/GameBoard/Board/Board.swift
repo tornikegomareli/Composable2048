@@ -11,9 +11,14 @@ import SwiftUI
 struct Board: View {
   var board: Matrix
   var addedTile: (Int, Int)? = nil
+  var movements: [TileMovement] = []
 
   private func wasAdded(row: Int, column: Int) -> Bool {
     addedTile?.0 == row && addedTile?.1 == column
+  }
+
+  private func findMovement(row: Int, column: Int) -> TileMovement? {
+    return movements.first { $0.from.row == row && $0.from.col == column }
   }
 
   var body: some View {
@@ -24,7 +29,16 @@ struct Board: View {
             0..<self.board[row: row].count,
             id: \.self
           ) { column in
-            Tile(Int(self.board[row: row][column]), wasAdded: self.wasAdded(row: row, column: column))
+            if self.wasAdded(row: row, column: column) {
+              Tile(
+                Int(self.board[row: row][column]),
+                wasAdded: self.wasAdded(row: row, column: column),
+                movement: self.findMovement(row: row, column: column)
+              )
+            } else {
+              Tile(Int(self.board[row: row][column]), wasAdded: false)
+            }
+
           }
         }
         .padding(4)
