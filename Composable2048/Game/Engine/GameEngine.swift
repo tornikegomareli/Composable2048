@@ -41,7 +41,7 @@ class GameEngine {
     if let emptyTile = emptyTile {
       newBoard[emptyTile.row, emptyTile.column] = Double(randomElement)
     }
- 
+
     return (newBoard, emptyTile)
   }
 
@@ -50,10 +50,10 @@ class GameEngine {
   /// - Returns: A new array where all non-zero elements are moved to the right, and zeros fill the remaining positions.
   /*
    Example:
-    Initial row: [2, 0, 4, 0]
-    tilesWithNumbers: [2, 4]
-    emptyTiles: 2
-    arrayOfZeros: [0, 0]
+   Initial row: [2, 0, 4, 0]
+   tilesWithNumbers: [2, 4]
+   emptyTiles: 2
+   arrayOfZeros: [0, 0]
 
    Returned row: [0, 0, 2, 4]
    */
@@ -138,18 +138,32 @@ class GameEngine {
   ///   - board: The current game board.
   ///   - direction: The direction to move the board.
   /// - Returns: A tuple containing the new board and the points scored during this move.
-  func push(_ board: Matrix, to direction: Direction) -> (newBoard: Matrix, scoredPoints: Int) {
-      var newBoard = board
-      points = .zero
+  func push(_ board: Matrix, to direction: Direction) -> (newBoard: Matrix, movements: [TileMovement], scoredPoints: Int) {
+    var newBoard = board
+    points = .zero
+    var movements: [TileMovement] = []
 
-      switch direction {
-      case .right: newBoard = (board |> pushRight)
-      case .up:    newBoard = (board |> pushUp)
-      case .left:  newBoard = (board |> pushLeft)
-      case .down:  newBoard = (board |> pushDown)
+    switch direction {
+    case .right:
+      for row in 0..<board.rows {
+        var lastCol: Int? = nil
+        for col in (0..<board.columns).reversed() {
+          if board[row, col] != 0 {
+            if let lastColUnwrapped = lastCol {
+              movements.append(TileMovement(from: (row, col), to: (row, lastColUnwrapped)))
+            } else {
+              lastCol = col
+            }
+          }
+        }
       }
+      newBoard = (board |> pushRight)
+    case .up:    newBoard = (board |> pushUp)
+    case .left:  newBoard = (board |> pushLeft)
+    case .down:  newBoard = (board |> pushDown)
+    }
 
-      return (newBoard, points)
+    return (newBoard, movements, points)
   }
 
   func mockBoard() -> Matrix {
@@ -180,11 +194,11 @@ class GameEngine {
   /// - Returns: A new board after the 'up' movement operation.
   private func pushUp(_ board: Matrix) -> Matrix {
     board
-      |> rotate  // Rotate the board 90 degrees counterclockwise.
-      |> flip  // Flip the board horizontally.
-      |> operateRows  // Slide and combine each row.
-      |> flip  // Flip the board back to its original orientation.
-      |> rotate  // Rotate the board back to its original orientation.
+    |> rotate  // Rotate the board 90 degrees counterclockwise.
+    |> flip  // Flip the board horizontally.
+    |> operateRows  // Slide and combine each row.
+    |> flip  // Flip the board back to its original orientation.
+    |> rotate  // Rotate the board back to its original orientation.
   }
 
   /// Moves the board downwards, combining any adjacent, identical tiles.
@@ -192,9 +206,9 @@ class GameEngine {
   /// - Returns: A new board after the 'down' movement operation.
   private func pushDown(_ board: Matrix) -> Matrix {
     board
-      |> rotate  // Rotate the board 90 degrees counterclockwise.
-      |> operateRows  // Slide and combine each row.
-      |> rotate  // Rotate the board back to its original orientation.
+    |> rotate  // Rotate the board 90 degrees counterclockwise.
+    |> operateRows  // Slide and combine each row.
+    |> rotate  // Rotate the board back to its original orientation.
   }
 
   /// Moves the board to the left, combining any adjacent, identical tiles.
@@ -202,9 +216,9 @@ class GameEngine {
   /// - Returns: A new board after the 'left' movement operation.
   private func pushLeft(_ board: Matrix) -> Matrix {
     board
-      |> flip  // Flip the board horizontally.
-      |> operateRows  // Slide and combine each row.
-      |> flip  // Flip the board back to its original orientation.
+    |> flip  // Flip the board horizontally.
+    |> operateRows  // Slide and combine each row.
+    |> flip  // Flip the board back to its original orientation.
   }
 
   /// Moves the board to the right, combining any adjacent, identical tiles.
@@ -212,7 +226,7 @@ class GameEngine {
   /// - Returns: A new board after the 'right' movement operation.
   private func pushRight(_ board: Matrix) -> Matrix {
     board
-      |> operateRows  // Slide and combine each row.
+    |> operateRows  // Slide and combine each row.
   }
 }
 
