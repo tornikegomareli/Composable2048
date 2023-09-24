@@ -15,6 +15,7 @@ struct MainGameFeature: Reducer {
     }
 
     var board: Matrix = .zeros(rows: 4, columns: 4)
+    var movements: [TileMovement] = []
     var newTile: (Int, Int)?
     var isUndoEnabled: Bool = true
     var score: Int = 0
@@ -42,9 +43,10 @@ struct MainGameFeature: Reducer {
         state.newTile = addedTile
         return .none
       case .userSwipedWith(let direction):
-        let (updatedBoard, updatedScore) = engine.push(state.board, to: direction)
+        let (updatedBoard, movements, updatedScore) = engine.push(state.board, to: direction)
         state.board = updatedBoard
         state.score += updatedScore
+        state.movements = movements
         let latestGameScore = state.score
         return .run { send in
           await send(.addTale)
@@ -76,7 +78,7 @@ struct MainGameView: View {
         )
 
         GoalText()
-        Board(board: viewStore.state.board)
+        Board(board: viewStore.state.board, movements: viewStore.state.movements)
           .gesture(
             DragGesture(
               minimumDistance: 20,
