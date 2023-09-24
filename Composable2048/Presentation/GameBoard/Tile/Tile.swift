@@ -10,14 +10,25 @@ import SwiftUI
 struct Tile: View {
   let value: Int
   let wasAdded: Bool
+  let movement: TileMovement?
 
   private let style: TileStyle
   private let title: String
   private let size: CGFloat = 70
+  private let spacing: CGFloat = 10  // Set this based on your layout
 
-  init(_ value: Int, wasAdded: Bool = false) {
+  func position(forRow row: Int, column: Int, tileSize: CGFloat, spacing: CGFloat) -> CGPoint {
+    let x = CGFloat(column) * (tileSize + spacing) + tileSize / 2
+    let y = CGFloat(row) * (tileSize + spacing) + tileSize / 2
+    return CGPoint(x: x, y: y)
+  }
+
+  @State private var animationProgress: CGFloat = 0
+
+  init(_ value: Int, wasAdded: Bool = false, movement: TileMovement? = nil) {
     self.wasAdded = wasAdded
     self.value = value
+    self.movement = movement
 
     style = TileStyle(value)
     title = value == 0 ? "" : value.description
@@ -39,14 +50,42 @@ struct Tile: View {
   }
 
   var body: some View {
-    Text(title)
+    let start = position(
+      forRow: movement?.from.row ?? 0,
+      column: movement?.from.col ?? 0,
+      tileSize: size,
+      spacing: spacing
+    )
+
+    let end = position(
+      forRow: movement?.to.row ?? 0,
+      column: movement?.to.col ?? 0,
+      tileSize: size,
+      spacing: spacing
+    )
+
+    return Text(title)
       .font(.system(size: fontSize, weight: .black, design: .monospaced))
       .foregroundColor(style.foregroundColor)
       .frame(width: size, height: size)
       .background(style.backgroundColor)
       .cornerRadius(2)
       .shadow(color: shadowColor, radius: 4, x: 0, y: 0)
-      .animation(wasAdded ? .easeIn : .none)
+      .modifier(
+        MoveModifier(
+          start: start,
+          end:  end,
+          progress: animationProgress,
+          shouldMove: wasAdded
+        )
+      )
+      .onAppear {
+        if wasAdded {
+          withAnimation {
+            animationProgress = 1
+          }
+        }
+      }
   }
 }
 
