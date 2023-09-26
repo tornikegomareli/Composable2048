@@ -15,8 +15,13 @@ struct MoveModifier: AnimatableModifier {
   var shouldMove: Bool
 
   var animatableData: CGFloat {
-    get { progress }
-    set { progress = newValue }
+    get {
+      progress
+    }
+
+    set {
+      progress = newValue
+    }
   }
 
   func body(content: Content) -> some View {
@@ -24,8 +29,8 @@ struct MoveModifier: AnimatableModifier {
       let posX = start.x + (end.x - start.x) * progress
       let posY = start.y + (end.y - start.y) * progress
       return AnyView(content.position(x: posX, y: posY))
-    } else {
-      return AnyView(content)
     }
+
+    return AnyView(content)
   }
 }
