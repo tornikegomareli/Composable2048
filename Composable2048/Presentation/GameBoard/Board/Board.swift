@@ -23,7 +23,10 @@ struct Board: View {
 
   var body: some View {
     VStack {
-      ForEach(0..<self.board.grid.count / 4, id: \.self) { row in
+        ForEach(
+            0..<self.board.grid.count / 4,
+            id: \.self
+        ) { row in
         HStack {
           ForEach(
             0..<self.board[row: row].count,
@@ -53,7 +56,9 @@ struct Board: View {
 #if DEBUG
 struct Board_Previews: PreviewProvider {
     static var previews: some View {
-      Board(board: GameEngine().mockBoard())
+        Board(
+            board: GameEngine().mockBoard()
+        )
     }
 }
 #endif
